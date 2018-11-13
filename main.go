@@ -93,7 +93,8 @@ func evalKNN(trainData, testData base.FixedDataGrid) (err error) {
 	cls.Fit(trainData)
 
 	// 予測
-	predictions, err := cls.Predict(testData)
+	var predictions base.FixedDataGrid
+	predictions, err = cls.Predict(testData)
 	if err != nil {
 		return
 	}
@@ -101,7 +102,8 @@ func evalKNN(trainData, testData base.FixedDataGrid) (err error) {
 	//fmt.Println(predictions)
 
 	// スコア算出
-	confusionMat, err := evaluation.GetConfusionMatrix(testData, predictions)
+	var confusionMat map[string]map[string]int
+	confusionMat, err = evaluation.GetConfusionMatrix(testData, predictions)
 	if err != nil {
 		return
 	}
