@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"./irisdata"
-	"./nn"
+	"github.com/bunji2/machinelearning/irisdata"
+	"github.com/bunji2/machinelearning/nn"
 	"github.com/sjwhitworth/golearn/base"
 	"github.com/sjwhitworth/golearn/evaluation"
 	"github.com/sjwhitworth/golearn/knn"
