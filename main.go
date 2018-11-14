@@ -14,10 +14,10 @@ import (
 )
 
 const (
-	irisDataFile   = "iris.csv"                   // IRISデータのパス
-	dataHeader     = false                        // ヘッダの有無 (true - あり, false - なし)
-	mnistImageFile = "train-images-idx3-ubyte.gz" //
-	mnistLabelFile = "train-labels-idx1-ubyte.gz" //
+	irisDataFile   = "dataset/iris.csv"                   // IRISデータのパス
+	dataHeader     = false                                // ヘッダの有無 (true - あり, false - なし)
+	mnistImageFile = "dataset/train-images-idx3-ubyte.gz" //
+	mnistLabelFile = "dataset/train-labels-idx1-ubyte.gz" //
 )
 
 func main() {
@@ -94,7 +94,7 @@ func nnIRIS() (err error) {
 func knnMNIST() (err error) {
 	var rawData base.FixedDataGrid
 	t1 := time.Now()
-	rawData, err = mnistdata.Load(mnistImageFile, mnistLabelFile, 1000)
+	rawData, err = mnistdata.Load(mnistImageFile, mnistLabelFile, 10000)
 	t2 := time.Now()
 	fmt.Println("elapse time of loading :", t2.Sub(t1))
 	if err != nil {
