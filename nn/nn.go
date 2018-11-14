@@ -120,6 +120,8 @@ func (nn *ClassifierData) Predict(data base.FixedDataGrid) (r base.FixedDataGrid
 		// 目的変数に対応するクラス名を取得
 		className := nn.resolveClassName(y)
 
+		//fmt.Println("#", "className =", d[1], y)
+		//fmt.Println("#", "className =", nn.resolveClassName(d[1]), className)
 		// rowNo 行目にクラス名を設定
 		base.SetClass(ret, rowNo, className)
 	}
