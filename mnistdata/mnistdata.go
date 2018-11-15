@@ -32,6 +32,7 @@ func Load(imageFile, labelFile string, max int) (r base.FixedDataGrid, err error
 	//fmt.Println("NCol =", data.NCol)
 	//fmt.Println("len(Images) =", len(data.Images))
 	//fmt.Println("len(Labels) =", len(data.Labels))
+	//l = data.Labels
 	rowSize := len(data.Images)
 	if max < rowSize {
 		rowSize = max
